@@ -97,7 +97,7 @@ local getcustomasset = getsynasset or getcustomasset or function(location) retur
 local customassetcheck = (getsynasset or getcustomasset) and true
 local queueonteleport = syn and syn.queue_on_teleport or queue_on_teleport or function() end
 local delfile = delfile or function(file) writefile(file, "") end
-
+print("100")
 local function displayErrorPopup(text, funclist)
 	local oldidentity = getidentity()
 	setidentity(8)
@@ -248,7 +248,7 @@ local saveSettingsLoop = coroutine.create(function()
         task.wait(10)
 	until not vapeInjected or not GuiLibrary
 end)
-
+print("251")
 task.spawn(function()
 	local image = Instance.new("ImageLabel")
 	image.Image = downloadVapeAsset("vape/assets/CombatIcon.png")
@@ -397,6 +397,7 @@ Friends.CreateToggle({
 	Name = "Spoof alias",
 	Function = function(callback) end,
 })
+print("400")
 local friendRecolorToggle = Friends.CreateToggle({
 	Name = "Recolor visuals",
 	Function = function(callback) FriendsTextList.FriendColorRefresh:Fire() end,
@@ -988,6 +989,7 @@ local function TextGUIUpdate()
 			23,
 			23
 		}
+		print("992")
         if TextGUI.GetCustomChildren().Parent then
             if (TextGUI.GetCustomChildren().Parent.Position.X.Offset + TextGUI.GetCustomChildren().Parent.Size.X.Offset / 2) >= (gameCamera.ViewportSize.X / 2) then
                 VapeText.TextXAlignment = Enum.TextXAlignment.Right
